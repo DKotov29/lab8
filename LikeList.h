@@ -2,26 +2,19 @@
 #ifndef LABS_LIKELIST_H
 #define LABS_LIKELIST_H
 
-template<typename T>
 struct Element {
-    T value;
+    int data;
     Element *next;
-
-    Element(T value) {
-        this->value = value;
-        this->next = nullptr;
-    }
-
-    Element* get_next(){
-        return next;
-    }
-
-
-
-//    ~Element(){ todo need?
-//
-//    }
 };
 
+Element *new_element();
+
+size_t calculate_list_size_from(Element *element);
+
+Element *get_last(Element *element);
+
+size_t calculate_size_of_satisfactory_results(Element* element, bool (*predic)(int));
+
+bool predicate(int a);
 
 #endif //LABS_LIKELIST_H
